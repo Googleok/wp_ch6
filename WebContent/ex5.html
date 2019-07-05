@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // in
+        // this 는 호출하는 놈
+        var o = {
+            name: '마이클',
+            age:20,
+            hasProperty: function (property) {
+                return property in this;
+            }
+        };
+
+        console.log(o.hasProperty('name'));
+        console.log(o.hasProperty('age'));
+        console.log(o.hasProperty('email'));
+
+        console.log(o.hasOwnProperty('name'));
+        console.log(o.hasOwnProperty('age'));
+        console.log(o.hasOwnProperty('email'));
+
+        // with, for~in
+        var o = {
+            name: '둘리',
+            age:10,
+            info1: function () {
+                console.log(this.name, this.age);
+            },
+            info2: function () {
+                with(this){
+                    console.log(name, age);
+                }
+            },
+            info3: function () {
+                var str = '';
+                for (var prop in this){
+                    str += (prop + ":");
+                }
+                console.log(str.substring(0, str.length-1));
+            }
+
+        };
+        o.info1();
+        o.info2();
+        o.info3();
+
+    </script>
+</head>
+<body>
+</body>
+</html>

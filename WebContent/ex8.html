@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ex8</title>
+    <script !src="">
+        // 배열처럼 접근 가능
+        var str = 'hello world';
+        for (var i = 0; i < str.length; i++) {
+            console.log(str[i]);
+        }
+
+        // 문자열 합치기(+)
+        var str1 = "Hello";
+        var str2 = "World";
+        var str3 = str1 + " " + str2;
+        console.log(str3);
+
+        // 형변환
+        var number = 5;
+        var str4 = "5" + number;
+        console.log(str4);
+
+        var str5 = "boolean" + true;
+        console.log(str5);
+
+        var color ="블랙/M/95";
+        colors = color.split('/');
+        console.log(colors);
+
+        // 객체 함수
+        var str6 = "string1 string2 string3";
+        console.log(str6.length);
+
+        var index = str6.indexOf('string4');
+        console.log(index);
+
+        var index = str6.indexOf('string2');
+        console.log(index);
+
+        var str7 = str6.substr(index);
+        console.log(str7);
+
+        // substr 은 (index, count)
+        var str8 = str6.substr(index, 7 /*count*/);
+        console.log(str8);
+
+        var str9 = str6.substring(index, 10 /*last_index -1 */);
+        console.log(str9);
+
+        var a = str6.split(' ');
+        console.log(a);
+
+        // 구분자가 없는경우 리턴값이 null이 나오지 않는다.
+        var str10 = 'abcdefg';
+        a = str10.split(':');
+        console.log(a);
+
+
+
+
+        +-
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

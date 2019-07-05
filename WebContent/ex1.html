@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+	var number1 =5;
+	var number2 = new Number(5);
+	
+	console.log(number1, typeof(number1));
+	console.log(number2, typeof(number2));
+	console.log(number1 + number2);
+	
+	// 내장타입 (number, boolean, string, function, array.....)
+	var n = 10;
+	var f = 3.14;
+	var b = true;
+	var s = 'helllo world';
+	var fn =  function () {};
+	var o = {};
+	var a = []; // Array 타입은 없다.
+	
+	// new 생성자함수()을 사용해서 객체를 생성할 때,
+	var n2 = new Number(5);
+	var s2 = new String('hello world');
+	var b2 = new Boolean(true);	
+	var f2 = new Number(3.14);
+	var fn2 = new Function('a', 'b', 'return a + b;');
+	var o2 = new Object();
+	var a2 = new Array();
+	
+	console.log(n, typeof(n));
+	console.log(f, typeof(f));
+	console.log(b, typeof(b));
+	console.log(s, typeof(s));
+	console.log(fn, typeof(fn));
+	console.log(a, typeof(a));
+	console.log(o, typeof(o));
+	
+	console.log('================================')
+	
+	console.log(n2, typeof(n2));
+	console.log(f2, typeof(f2));
+	console.log(b2, typeof(b2));
+	console.log(s2, typeof(s2));
+	console.log(fn2, typeof(fn2));
+	console.log(a2, typeof(a2));
+	console.log(o2, typeof(o2));
+
+	
+	// 내장타입의 객체는 확장이 불가능하다.
+	n.myVal = 20;
+	console.log(n.myVal);
+	
+	// Object 타입의 객체는 확장이 가능하다.
+	n2.myVal = 20;
+	console.log(n2.myVal);
+	
+	o = {};
+	o.f = function () {
+		var a = 1;
+		var b = 2;
+		return a + b;
+	};
+	
+	console.log(o.f());
+	
+	// 브라우저 내장 객체 console
+	console.log('로그입니다.');
+	console.warn('경고입니다.');
+	console.error('에러입니다.');
+	console.info('정보입니다.');
+		
+	var myVar, myVar2 = null;
+	alert( myVar + ", " + myVar2 );
+	alert( myVar == myVar2 );
+	alert( myVar === myVar2 );  
+
+</script>
+</head>
+<body>
+	<h1>기본 데이터 타입</h1>
+</body>
+</html> 

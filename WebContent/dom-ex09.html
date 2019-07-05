@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>문서객체만들기</title>
+    <script>
+        // 문서객체 클래스 이름으로 가져오기
+        window.onload = function () {
+            var header1 = document.querySelector('#header-1');
+            var headers = document.querySelectorAll('.header');
+
+            setTimeout(function () {
+                header1.innerText = 'by querySelector';
+                headers[0].innerText = 'by querySelecrtor';
+
+            }, 2000);
+        }
+    </script>
+</head>
+<body>
+    <h1>문서객체 가져오기 - 1</h1>
+    <h1 id="header-1">Header</h1>
+    <h1 class="header">Header</h1>
+</body>
+</html>

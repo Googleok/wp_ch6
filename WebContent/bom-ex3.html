@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>location 객체</title>
+    <script !src="">
+        var s = '';
+        for (var key in location){
+            s += (key + ":" + location[key] + '\n')
+        }
+        console.log(s);
+
+        // location 객체 : 주소창
+        // 속성
+        // href, protocol ...................
+
+        // refresh 하는 방법1
+
+        // setTimeout(function () {
+        //   location = location;
+        // }, 3000);
+
+    </script>
+</head>
+<script>alert('loading');</script>
+<body>
+    <!-- refresh 방법1 -->
+    <button onclick="location = location;">refresh1</button>
+
+    <!-- refresh 방법2 -->
+    <button onclick="location.href = location.href;">refresh2</button>
+
+    <!-- refresh 방법3 -->
+    <button onclick="location.assign(location);">refresh3</button>
+
+    <!-- refresh 방법4 -->
+    <button onclick="location.replace(location);">refresh4</button>
+
+    <!-- refresh 방법5 추천! -->
+    <button onclick="location.reload();">refresh5</button>
+
+</body>
+
+
+
+
+</html>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+<script>
+	var myVar1;
+	var myVar2 = null;
+
+	console.log(myVar1, myVar2);
+	console.log(myVar1 == myVar2);
+	console.log(myVar1 === myVar2);
+
+	console.log('========================================')
+
+	// == (!, equality, 값의 등치성, 형변환o)
+
+	console.log("2" == 2);
+	console.log(true == 1);
+	console.log('abc' == new String('abc'));
+
+	// 형변환
+	console.log(2 + "2");
+	console.log("2" + 2);
+
+	console.log(true + 10);
+	console.log('abc' + new String('abc'));
+
+
+
+	console.log('========================================')
+	// == (!, identity, 객체의 동일성, 형변환x)
+	console.log("2" === 2);
+	console.log(true === 1);
+	console.log('abc' === new String('abc'));
+
+	// 추천:
+	// == 연산자를 사용할 때는 엄격하게 형변환을 해서
+	// 두 피연산자의 타입을 맞춘다.
+
+	str = "5";
+	console.log(parseInt(str) == 5);
+
+	// 뱐수범위
+	// 1. var 사용여부에 영향을 받는다.
+	// 2. 특히 local(함수내부)에서 var를 사용해서
+	// 		변수를 정의하면 local 범위를 가진다.
+	var i = 5;
+	var f = function () {
+		// global i = 20;
+		var i = 20;
+		console.log(i);
+		i = i - 1;
+	}
+	f();
+	console.log(i);
+	// 변수에는 무조건 var를 붙인다.
+
+	// statement
+	// js engine이 읽어들어서 실행하는 단위
+	// \n or ; (세미콜론) 단위로 읽어서 실행한다.
+	var s = 'hello world'; console.log(s);
+
+	// 전역(global) 객체 window
+	// console.log(s);
+	console.log(window.s);
+
+	var o = {}
+	o.name = '둘리';
+	o.age = new Number(10);
+	o.age.man = 9;
+	o.age.value = 10;
+
+	console.log(window.o);
+	console.log(window.o.name);
+	console.log(window.o.age);
+	console.log(window.o.age.man);
+
+	var o2 = {
+		'name': '둘리',
+		'age': {
+			'value': 10,
+			'man': 9
+		},
+		'show':function () {
+			console.log('...');
+		}
+
+	};
+
+</script>
+</head>
+<body>
+	<h1>null VS. undefined</h1>
+</body>
+</html>

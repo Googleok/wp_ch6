@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="arrayex.js"></script>
+    <script>
+        // 배열정의
+        var a1 = new Array(10);
+        a1[0] = 0;
+        console.log(a1);
+        console.log(a1.length);
+
+        // 동적으로 크기가 변하는 배열 (에러 안남)
+        // new Array(size);
+        // size를 주는 것은 별다른 의미가 없지만,
+        a1[20] = 20;
+        console.log(a1);
+        console.log(a1.length);
+
+        // 배열정의
+        // 2. literal
+        var a2 = [];
+        console.log(a2.length);
+
+        // 내부 저장 타입은 정해져 있지 않다.
+        // 중간에 비어있는 배열요소는 undefined
+        a2[0] = 10;
+        a2[1] = 'Hello World';
+        a2[4] = {
+            name: '둘리',
+        };
+        console.log(a2);
+        console.log(a2.length);
+
+        // 초기화
+        var a3 = [1, 'abc', true];
+        console.log(a3);
+
+        var a4 = new Array(1, 'abc', true);
+        console.log(a4);
+
+        // 순회
+        for (var i = 0; i < a4.length; i++){
+            console.log(a4[i]);
+        }
+
+        // 배열함수 - concat
+        var colors = ['black', 'white', 'yellow'];
+        var fruits = ['mango', 'apple', 'watermelon'];
+
+        var test = fruits.concat(colors);
+        console.log(test);
+
+        // 배열함수 - join
+        var str = fruits.join(',');
+        console.log(str);
+
+        // 배열함수 - pop(stack)
+        var color = colors.pop();
+        console.log(color);
+        console.log(colors);
+
+        // 배열함수 - push(stack)
+        colors.push('red');
+        console.log(colors);
+
+        // 배열함수 - reverse
+        fruits.reverse();
+        console.log(fruits);
+
+        // 배열함수 - shift
+        var numbers = [3000, 1000, 4000, 2000];
+        numbers.shift();
+        console.log(numbers);
+
+        // 배열함수 - slice
+        var numbers2 = numbers.slice(0, 2);
+        console.log(numbers2);
+        console.log(numbers);
+
+        // 배열함수 - sort
+        numbers.sort();
+        console.log(numbers);
+
+        // 배열함수 - splice
+        console.log(fruits);
+        fruits2 = fruits.splice(1 /*index*/, 1 /*count*/); // 삭제
+        // 잘라내기
+        console.log(fruits2);
+        console.log(fruits);
+
+        // 배열을 리스트로 사용하기
+        // insert(index, val), remove(index)
+        a = [1, 2, 3, 4, 5];
+
+        console.log('==========================================');
+
+        a.insert(3, 6);
+        console.log(a);
+        a.remove(3);
+        console.log(a);
+
+        a.insert(2, ['a', 'b', 'c']);
+        console.log(a);
+
+        console.log('==================================');
+
+        // 연관배열(Associated Array)
+        var employee = {
+            name: "홍길동",
+            title: "과장",
+            info: function () {
+                console.log(this.name, this.title);
+            }
+        }
+
+        console.log(employee.name);
+        console.log(employee['name']);
+
+        // 사용예1
+        // 메소드 이름(문자열) 로 호출 할 때
+
+        var s = 'info';
+        employee[s]();
+
+        // 사용 예2
+        // map(Java), dict(Python)
+        var map = {};
+        map['one'] = 1;      // map.one = 1
+        map['two'] = 2;      // map.two = 2
+        map['three'] = 3;    // map.three = 3
+
+        console.log(map['three']);
+        console.log(map);
+
+    </script>
+</head>
+<body>
+<h1>Array</h1>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>navigator 객체</title>
+    <script src="browser-detect.js"></script>
+    <script>
+        var s = '';
+        for (var key in navigator){
+            s += (key + ":" + navigator[key] + '\n')
+        }
+        // console.log(s);
+
+        BrowserDetect.init();
+        console.log("browser: ",BrowserDetect.browser);
+        console.log("version: ",BrowserDetect.version);
+        console.log("os: ", BrowserDetect.OS);
+        console.log("dataBrowser: ", BrowserDetect.dataBrowser);
+        console.log("dataOS: ", BrowserDetect.dataOS);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

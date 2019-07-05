@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>문서객체만들기</title>
+    <script>
+        window.onload = function () {
+            var img = document.createElement('img')
+            console.log('asfasf');
+            setTimeout(function () {
+                document.body.appendChild(img);
+                img.setAttribute('src', 'bear.jpg');
+                img.setAttribute('width', '1000');
+                img.setAttribute('height', '700');
+                img.setAttribute('title', '북극곰');
+            }, 2000);
+        }
+    </script>
+</head>
+<body>
+    <h1>문서객체만들기</h1>
+</body>
+</html>
