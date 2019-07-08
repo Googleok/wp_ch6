@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src = "browser-detect.js"></script>
+    <meta charset="UTF-8">
+    <title>event-ex01</title>
+    <style>
+        div, h2, span {border: 3px solid #333333;}
+    </style>
+    <script>
+
+        window.onload = function(){
+            // event bubbling
+            // ie: outer-div > inner-div > header > text
+            // others: text > header > inner-div > outer-div
+
+            document.getElementById('outer-div').addEventListener('click', function () {
+               console.log('outer-div');
+            });
+            document.getElementById('inner-div').addEventListener('click', function (event) {
+                // cross browser
+                // event == null -> IE인 경우 (window.event)
+                var event = e || window.event;
+
+                // 이벤트 전달 막기
+                event.cancelBubble = true;  // IE
+                event.stopPropagation && event.stopPropagation();    // others
+
+                console.log('inner-div');
+            });
+            document.getElementById('header').addEventListener('click', function () {
+                console.log('header');
+            });
+            document.getElementById('text').addEventListener('click', function () {
+                console.log('text');
+            });
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Event Propagation</h1>
+    <div id="outer-div">
+        <div id="inner-div">
+            <h2 id="header" style="background-color: coral">
+                <span id="text">text</span>
+            </h2>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src = "browser-detect.js"></script>
+    <meta charset="UTF-8">
+    <title>event-ex01</title>
+    <script>
+
+        window.onload = function(){
+            var form = document.getElementById('form-login');
+
+            // DOM Level 0 - 이벤트 기본 동작 막기
+            /*
+            form.onsubmit = function(){
+               var email = document.getElementById('email').value;
+
+               console.log(email);
+               if(email == ''){
+                  alert('이메일은 필수 입력 항목입니다.');
+                  document.getElementById('email').focus();
+                  return false;
+               }
+
+               var password = document.getElementById('password').value;
+
+               console.log(password);
+               if(password == ''){
+event-ex05.html                  alert('password는 필수 입력 항목입니다.');
+                  document.getElementById('password').focus();
+                  return false;
+               }
+
+               return true;
+            }
+            */
+
+            // DOM Level2 - 이벤트 기본 동작 막기
+            form.addEventListener('submit',function(event){
+
+                event.preventDefault();
+
+                var email = document.getElementById('email').value;
+
+                console.log(email);
+                if(email == ''){
+                    alert('이메일은 필수 입력 항목입니다.');
+                    document.getElementById('email').focus();
+                    return;
+                }
+
+                var password = document.getElementById('password').value;
+
+                console.log(password);
+                if(password == ''){
+                    alert('password는 필수 입력 항목입니다.');
+                    document.getElementById('password').focus();
+                    return;
+                }
+
+                this.submit();
+            });
+
+            // DOM Level2 - 이벤트 기본 동작 막기 (이유 - ajax)
+            form.addEventListener('submit', function (event) {
+                // ajax로 통신이 끝나기전에 submit 막기
+                event.preventDefault();
+                console.log('start log-in with ajax');
+            });
+
+
+        }
+
+    </script>
+</head>
+<body>
+<form id = 'form-login' method ='post' action="login">
+    <label for="">이메일</label>
+    <br />
+    <input type="text" name ="email" id ="email"/>
+    <br />
+    <br />
+
+    <label for="">비밀번호</label>
+    <br />
+    <input type="password" name ="password" id ="password"/>
+    <br />
+    <br />
+    <input type="submit" value="로그인"/>
+
+</form>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<a href="#" id = 'fetch-data'>다음 10 개 </a>
+
+</body>
+</html>
+

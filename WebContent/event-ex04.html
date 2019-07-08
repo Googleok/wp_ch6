@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var registerEventHandler = function(element, eventName, handler){
+            element &&
+            element.attachEvent &&
+            element.attachEvent('on' + eventName, handler);
+
+
+
+            element &&
+            element.addEventListener &&
+            element.addEventListener(eventName, handler);
+
+        }
+
+        // Dom Level 2 : Standard Event Model
+        window.onload = function () {
+            var header = document.getElementById('header');
+            // Multi Event Listener 연결 가능
+            // Observer Pattern
+            header.addEventListener('click', function () {
+               console.log("click 1");
+            });
+
+            header.addEventListener('click', function () {
+               console.log("click 2");
+            });
+
+            header.addEventListener('click', function () {
+               console.log("click 3");
+            });
+
+            registerEventHandler(header, 'click', function () {
+                console.log("click 4");
+            })
+
+        }
+    </script>
+</head>
+<body>
+    <h1 id="header">Click</h1>
+</body>
+</html>
